@@ -14,7 +14,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: 
+    secure: Oiql1EixuHMGQqJS3Rb4QL2/XTSc4Xhc/Mn1v3i43YNujSfAVx9/T729qzAjDx6v0x77pNQVbwSZmZ5EsZUbjR2K3pF7M9R6Jw6C9ylZbywOxdenNGoegJyziOZdlbNXIM5R4UxZ1BLv7CfahtPdLcxkUEu/R3q7t/FJ87uU7J9Sl66zbURDqyMru8TqXHlIOfdl9DLgRlbfC6L2/YOEp45jLJXAaIVc744abCRwmXe9WDpKkG7k5iMAYXX1Zg67W6BGCaCk9nH4cgXutyvf7+bsTmqFXdbJptqhfaFsbjuDscNSvcRkbGO8nnF2wcW7MiqdO/UHzc00JWAsP/iRo4PpAw8wreJgXg/JxQuH18sHMNN81jovinIf+XSWeb/9H8QP9PMnkPwPkE3Xcjm7ygZjUn1LPTVq6/YH79Clrf/p7WeUzVfV8wt2TQ7FaL8iRdu/Vmgq9FXKWTtNgHhSywwbsFzWRZ4Rd2Fg3uPhS+FMYh5TrK2tNgL4dGuYe4x8iqRZ0bZnN6k8nofHbuL2q1KIxKddCtKAicIs0h1ursVkLWbg37rZQHMgnMjb78UlwVK8DRkIcOxmYH0wuUemsp4SKkZ3/JpZfg4ioGZ6wtmwqFk0yOFM/Mao8vhUjkh+UJtdkb/+7KwRwGCV5xGfD6Vn/Pkh0jNOH/IMDIk9HpA=
   file: emacs.tar.gz
   skip_cleanup: true
   on:
