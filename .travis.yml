@@ -1,0 +1,18 @@
+sudo: false
+language: c
+script:
+- cd $TRAVIS_BUILD_DIR
+- curl -L https://github.com/emacs-mirror/emacs/archive/emacs-25.1.tar.gz | tar xz
+- ls -l
+- cd emacs*
+- ./autogen.sh
+- ./configure -h
+
+deploy:
+  provider: releases
+  api_key:
+    secure: 
+  file: emacs.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
