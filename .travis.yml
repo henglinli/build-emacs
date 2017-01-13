@@ -6,8 +6,11 @@ script:
 - ls -l
 - cd emacs*
 - ./autogen.sh
-- ./configure -h
-
+- CFLAGS="-static" ./configure --prefix=$TRAVIS_BUILD_DIR/emacs --without-all
+- make > /dev/null && make install > /dev/null
+- ls -l $TRAVIS_BUILD_DIR/emacs
+- cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz emacs
+- ldd $TRAVIS_BUILD_DIR/emacs/bin/emacs
 deploy:
   provider: releases
   api_key:
