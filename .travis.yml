@@ -1,7 +1,7 @@
 sudo: false
 addons:
   apt:
-    sources:
+    packages:
     - libncurses-dev
 language: c
 script:
