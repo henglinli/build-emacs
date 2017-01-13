@@ -2,7 +2,7 @@ sudo: false
 addons:
   apt:
     packages:
-    - libncurses-dev
+    - libtinfo-dev
 language: c
 script:
 - cd $TRAVIS_BUILD_DIR
@@ -10,7 +10,7 @@ script:
 - ls -l
 - cd emacs*
 - ./autogen.sh
-- ./configure CFLAGS='-static' --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x   
+- ./configure LIBS='/usr/lib/x86_64-linux-gnu/libtinfo.a' --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x   
 - make > /dev/null && make install > /dev/null
 - ls -l $TRAVIS_BUILD_DIR/emacs
 - cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz emacs
