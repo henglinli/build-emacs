@@ -10,7 +10,7 @@ script:
 - ls -l
 - cd emacs*
 - ./autogen.sh
-- ./configure LIBS='/usr/lib/x86_64-linux-gnu/libtinfo.a' --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x   
+- ./configure --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x --without-makeinfo   
 - make > /dev/null && make install > /dev/null
 - ls -l $TRAVIS_BUILD_DIR/emacs
 - cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz emacs
