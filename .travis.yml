@@ -1,4 +1,8 @@
 sudo: false
+addons:
+  apt:
+    sources:
+    - libncurses-dev
 language: c
 script:
 - cd $TRAVIS_BUILD_DIR
