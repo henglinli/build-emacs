@@ -9,8 +9,9 @@ script:
 - curl -L https://github.com/emacs-mirror/emacs/archive/emacs-25.1.tar.gz | tar xz
 - ls -l
 - cd emacs*
+- sed -ie 's/tinfo ncurses/ncurses/g' configure.ac
 - ./autogen.sh
-- LIBS_TERMCAP="-lncurses" ./configure --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x   
+- ./configure --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x   
 - make > /dev/null && make install > /dev/null
 - ls -l $TRAVIS_BUILD_DIR/emacs
 - cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz emacs
