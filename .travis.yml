@@ -1,3 +1,4 @@
+sudo: required
 addons:
   apt:
     packages:
@@ -10,11 +11,11 @@ script:
 - cd emacs*
 - ./autogen.sh
 - ./configure --prefix=/usr/local/emacs --without-all --without-x --without-makeinfo   
-- make > /dev/null && make install > /dev/null
-- ls -l $TRAVIS_BUILD_DIR/emacs
-- cp /lib/x86_64-linux-gnu/libtinfo.so.5 /usr/local/emacs
+- make > /dev/null 
+- sudo make install > /dev/null
+- ldd /usr/local/emacs/bin/emacs
+- sudo cp /lib/x86_64-linux-gnu/libtinfo.so.5 /usr/local/emacs
 - cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz /usr/local/emacs
-- ldd $TRAVIS_BUILD_DIR/emacs/bin/emacs
 deploy:
   provider: releases
   api_key:
