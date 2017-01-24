@@ -9,11 +9,11 @@ script:
 - ls -l
 - cd emacs*
 - ./autogen.sh
-- ./configure --prefix=$TRAVIS_BUILD_DIR/emacs --without-all --without-x --without-makeinfo   
+- ./configure --prefix=/usr/local/emacs --without-all --without-x --without-makeinfo   
 - make > /dev/null && make install > /dev/null
 - ls -l $TRAVIS_BUILD_DIR/emacs
-- cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz emacs
-- cp /lib/x86_64-linux-gnu/librt.so.1 emacs
+- cp /lib/x86_64-linux-gnu/libtinfo.so.5 /usr/local/emacs
+- cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz /usr/local/emacs
 - ldd $TRAVIS_BUILD_DIR/emacs/bin/emacs
 deploy:
   provider: releases
