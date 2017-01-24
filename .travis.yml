@@ -18,7 +18,7 @@ script:
 - ME=`whoami`
 - sudo chown -R $ME:users /usr/local/emacs 
 - cd $TRAVIS_BUILD_DIR 
-- sudo tar cfz emacs.tar.gz /usr/local/emacs 
+- tar cfz emacs.tar.gz /usr/local/emacs 
 deploy:
   provider: releases
   api_key:
