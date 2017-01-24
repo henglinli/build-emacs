@@ -15,7 +15,8 @@ script:
 - sudo make install > /dev/null
 - ldd /usr/local/emacs/bin/emacs
 - sudo cp /lib/x86_64-linux-gnu/libtinfo.so.5 /usr/local/emacs
-- cd $TRAVIS_BUILD_DIR && tar cfz emacs.tar.gz /usr/local/emacs
+- cd $TRAVIS_BUILD_DIR 
+- sudo tar cfz emacs.tar.gz /usr/local/emacs
 deploy:
   provider: releases
   api_key:
